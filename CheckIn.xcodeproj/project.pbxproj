@@ -14,6 +14,8 @@
 		3136AC231AA7047F00D4ECA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC221AA7047F00D4ECA9 /* Images.xcassets */; };
 		3136AC261AA7047F00D4ECA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC241AA7047F00D4ECA9 /* LaunchScreen.xib */; };
 		3136AC321AA7047F00D4ECA9 /* CheckInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC311AA7047F00D4ECA9 /* CheckInTests.swift */; };
+		319EA9F41AAD909A0080FA78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319EA9F31AAD909A0080FA78 /* CoreLocation.framework */; };
+		319EA9F61AAD940D0080FA78 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319EA9F51AAD940D0080FA78 /* LocationManager.swift */; };
 		31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */; };
 		31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319C1AAD6BB00046A8A5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		3136AC2B1AA7047F00D4ECA9 /* CheckInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136AC301AA7047F00D4ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3136AC311AA7047F00D4ECA9 /* CheckInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTests.swift; sourceTree = "<group>"; };
+		319EA9F31AAD909A0080FA78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		319EA9F51AAD940D0080FA78 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Models/LocationManager.swift; sourceTree = "<group>"; };
 		31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		31CA319C1AAD6BB00046A8A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319EA9F41AAD909A0080FA78 /* CoreLocation.framework in Frameworks */,
 				31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */,
 				31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */,
 			);
@@ -67,6 +72,7 @@
 		3136AC0B1AA7047F00D4ECA9 = {
 			isa = PBXGroup;
 			children = (
+				319EA9F31AAD909A0080FA78 /* CoreLocation.framework */,
 				31CA319C1AAD6BB00046A8A5 /* MapKit.framework */,
 				31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */,
 				3136AC161AA7047F00D4ECA9 /* CheckIn */,
@@ -88,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */,
+				319EA9F51AAD940D0080FA78 /* LocationManager.swift */,
 				3136AC1B1AA7047F00D4ECA9 /* FirstViewController.swift */,
 				3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */,
 				3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */,
@@ -225,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319EA9F61AAD940D0080FA78 /* LocationManager.swift in Sources */,
 				3136AC1E1AA7047F00D4ECA9 /* CheckInViewController.swift in Sources */,
 				3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */,
 				3136AC1C1AA7047F00D4ECA9 /* FirstViewController.swift in Sources */,
