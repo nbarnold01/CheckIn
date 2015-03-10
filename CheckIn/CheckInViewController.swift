@@ -9,12 +9,16 @@
 import UIKit
 import MapKit
 import CoreLocation
+import QuartzCore
+
 
 class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var commentTextView: UITextView!
     
     var locationManager:CLLocationManager!
     
@@ -23,6 +27,9 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.mapView.layer.cornerRadius = 4
+        self.commentTextView.layer.cornerRadius = 2
         
         locationManager = CLLocationManager()
         locationManager.delegate = self

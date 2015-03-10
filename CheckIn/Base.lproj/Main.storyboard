@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="501" width="600" height="50"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXs-Fh-Fn3">
-                                        <rect key="frame" x="10" y="5" width="486" height="40"/>
+                                        <rect key="frame" x="5" y="5" width="502" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -65,8 +64,8 @@
                                     <constraint firstAttribute="trailing" secondItem="hZf-lY-RPB" secondAttribute="trailing" constant="16" id="Qtn-Hb-7zd"/>
                                     <constraint firstAttribute="centerY" secondItem="hZf-lY-RPB" secondAttribute="centerY" id="XxL-RI-wnS"/>
                                     <constraint firstItem="mXs-Fh-Fn3" firstAttribute="top" secondItem="egR-Ku-4ON" secondAttribute="top" constant="5" id="bOC-so-nbT"/>
-                                    <constraint firstItem="hZf-lY-RPB" firstAttribute="leading" secondItem="mXs-Fh-Fn3" secondAttribute="trailing" constant="16" id="ffo-cq-XBN"/>
-                                    <constraint firstItem="mXs-Fh-Fn3" firstAttribute="leading" secondItem="egR-Ku-4ON" secondAttribute="leading" constant="10" id="hkZ-Gt-x8P"/>
+                                    <constraint firstItem="hZf-lY-RPB" firstAttribute="leading" secondItem="mXs-Fh-Fn3" secondAttribute="trailing" constant="5" id="ffo-cq-XBN"/>
+                                    <constraint firstItem="mXs-Fh-Fn3" firstAttribute="leading" secondItem="egR-Ku-4ON" secondAttribute="leading" constant="5" id="hkZ-Gt-x8P"/>
                                     <constraint firstAttribute="trailing" secondItem="mXs-Fh-Fn3" secondAttribute="trailing" constant="10" id="sgW-li-NBv"/>
                                 </constraints>
                                 <variation key="default">
@@ -130,6 +129,7 @@
                     <navigationItem key="navigationItem" id="fht-oz-AZc"/>
                     <connections>
                         <outlet property="collectionView" destination="U6S-pr-JFh" id="UfU-sf-5rV"/>
+                        <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="zok-wV-QgL"/>
                         <outlet property="mapView" destination="U6V-cI-0GN" id="Yzv-lk-7CK"/>
                     </connections>
                 </viewController>
