@@ -12,6 +12,8 @@ import CoreLocation
 import QuartzCore
 
 
+let StopLocationMonitoringNotification:String = "stopLocationMonitoring"
+
 class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -70,7 +72,31 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
   
+    func registerNotifications () {
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector:Selector(stopLocationMonitoring()),
+            name: StopLocationMonitoringNotification,
+            object: nil
+        )
+        
+    }
+    
+    func deregisterNotifications () {
+     
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+        
+    }
+    
 
+    func stopLocationMonitoring () {
+        
+        locationManager.stopMonitoringSignificantLocationChanges()
+        self.mapView.showsUserLocation = false;
+    }
+    
     //MARK: UICollectionView Datasource and delegate
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -171,11 +197,12 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
     }
     
-//MARK:UIKeyboard Methods
+    //MARK:UIKeyboard Methods
     
     
     
-
+    
+    
     
     
 }
