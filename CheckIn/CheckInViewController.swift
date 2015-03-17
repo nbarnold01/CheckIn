@@ -31,17 +31,8 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         self.mapView.layer.cornerRadius = 4
         self.commentTextView.layer.cornerRadius = 2
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        initializeLocationManager()
         
-//        if (!CLLocationManager.locationServicesEnabled()) {
-            locationManager.requestWhenInUseAuthorization()
-//        }
-        
-        locationManager.startUpdatingLocation()
-        
-        self.mapView.showsUserLocation = true
         self.mapView.delegate = self;
     }
 
@@ -49,6 +40,36 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    //MARK:Private
+
+    func initializeLocationManager() {
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        
+        switch CLLocationManager.authorizationStatus() {
+            
+        case .NotDetermined :
+            locationManager.requestWhenInUseAuthorization()
+            
+            
+        case .AuthorizedWhenInUse,.AuthorizedAlways:
+            locationManager.startUpdatingLocation()
+            self.mapView.showsUserLocation = true
+            
+            
+        default:
+            NSLog("Location Not Authorized");
+        }
+    }
+    
+  
 
     //MARK: UICollectionView Datasource and delegate
     
@@ -78,7 +99,6 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
     }
     
-    //MARK: UICollectionView Delegate
     
     //MARK: CLLocationManager Delegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -115,29 +135,25 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
 //        }
 //    }
 //    
-//    func locationManager(manager: CLLocationManager!,
-//        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-//            var shouldIAllow = false
-//            
-//            switch status {
-//            case CLAuthorizationStatus.Restricted:
-//                locationStatus = "Restricted Access to location"
-//            case CLAuthorizationStatus.Denied:
-//                locationStatus = "User denied access to location"
-//            case CLAuthorizationStatus.NotDetermined:
-//                locationStatus = "Status not determined"
-//            default:
-//                locationStatus = "Allowed to location Access"
-//                shouldIAllow = true
-//            }
-//            NSNotificationCenter.defaultCenter().postNotificationName("LabelHasbeenUpdated", object: nil)
-//            if (shouldIAllow == true) {
-//                NSLog("Location to Allowed")
-//                // Start location services
-//                locationManager.startUpdatingLocation()
-//            } else {
-//                NSLog("Denied access: \(locationStatus)")
-//            }
+    
+    
+    func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            
+            var shouldIAllow = false
+            
+            switch status {
+                
+            case .AuthorizedAlways,.AuthorizedWhenInUse :
+                locationManager.startUpdatingLocation()
+                
+                self.mapView.showsUserLocation = true
+                
+            default:
+                NSLog("DidChangeAuthorization: Not able to get location")
+            }
+    }
+    
     
     //MARK:MapKit delegate
      func mapView(mapView: MKMapView!, regionWillChangeAnimated animated: Bool) {
@@ -154,7 +170,11 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         mapView.setRegion(region, animated: true)
         
     }
-
+    
+//MARK:UIKeyboard Methods
+    
+    
+    
 
     
     
