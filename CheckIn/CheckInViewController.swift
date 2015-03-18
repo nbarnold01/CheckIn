@@ -22,13 +22,35 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var commentTextView: UITextView!
     
-    var locationManager:CLLocationManager!
+    @IBOutlet weak var commentContainerBottomConstraint: NSLayoutConstraint!
+    
+    
+    var locationManager:CLLocationManager
     
     var shouldAutomaticallyMoveMap = true
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        self.locationManager = CLLocationManager()
+
+        super.init(coder: aDecoder)
+
+    }
+  
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        
+        self.locationManager = CLLocationManager()
+        
+        super.init(nibName:nibNameOrNil, bundle: nibBundleOrNil)
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        registerNotifications()
         
         self.mapView.layer.cornerRadius = 4
         self.commentTextView.layer.cornerRadius = 2
@@ -38,19 +60,29 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         self.mapView.delegate = self;
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
+    //MARK:Actions
     
+    @IBAction func swippedDown(sender: UISwipeGestureRecognizer) {
+        
+        
+        if (self.commentTextView.isFirstResponder()) {
+            self.commentTextView.resignFirstResponder()
+ 
+        }
+    }
     
     //MARK:Private
 
     func initializeLocationManager() {
         
-        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -81,19 +113,32 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
             object: nil
         )
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("keyboardWillShow:"),
+            name: UIKeyboardWillChangeFrameNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("keyboardWillHide:"),
+            name:UIKeyboardWillHideNotification, object: nil);
+
+        
+        
     }
     
     func deregisterNotifications () {
      
         NSNotificationCenter.defaultCenter().removeObserver(self)
         
-        
     }
     
 
     func stopLocationMonitoring () {
         
-        locationManager.stopMonitoringSignificantLocationChanges()
+        self.locationManager.stopMonitoringSignificantLocationChanges()
         self.mapView.showsUserLocation = false;
     }
     
@@ -200,10 +245,70 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     //MARK:UIKeyboard Methods
     
     
+    func keyboardWillShow(notification:NSNotification) {
+        
+        var info = notification.userInfo!
+        
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+        
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as Double
+    
+        self.commentContainerBottomConstraint.constant = keyboardFrame.size.height - self.bottomLayoutGuide.length
+        self.commentTextView.setNeedsUpdateConstraints()
+        
+        
+        //This sucks. Perhaps it will be fixed in a new version of XCode/Swift
+        let animationOptions = UIViewAnimationOptions(UInt((info[UIKeyboardAnimationCurveUserInfoKey] as NSNumber).integerValue << 16))
+
+        
+        UIView.animateWithDuration(duration,
+            delay: 0.0,
+            options: animationOptions,
+            animations: {()in
+                self.view.layoutIfNeeded()
+            },completion: {(Bool)  in
+                
+            }
+        )
+
+    }
+    
+
+
+
+    func keyboardWillHide(notification:NSNotification) {
+        
+        var info = notification.userInfo!
+        
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        let curve = info[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as Double
+        
+        self.commentContainerBottomConstraint.constant = 0
+        self.commentTextView.setNeedsUpdateConstraints()
+        
+        
+        //This sucks. Perhaps it will be fixed in a new version of XCode/Swift
+        let animationOptions = UIViewAnimationOptions(UInt((info[UIKeyboardAnimationCurveUserInfoKey] as NSNumber).integerValue << 16))
+        
+        
+        UIView.animateWithDuration(duration,
+            delay: 0.0,
+            options: animationOptions,
+            animations: {()in
+                self.view.layoutIfNeeded()
+            },completion: {(Bool)  in
+                
+            }
+        )
+    }
+
+
     
     
-    
-    
-    
+
 }
 

@@ -103,6 +103,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="egR-Ku-4ON" firstAttribute="top" secondItem="U6V-cI-0GN" secondAttribute="bottom" constant="16" id="GDn-uk-Dwt"/>
                             <constraint firstItem="U6V-cI-0GN" firstAttribute="leading" secondItem="DT2-Oc-Nlt" secondAttribute="leadingMargin" id="H0t-o8-VhM"/>
@@ -125,15 +126,24 @@
                                 <include reference="uhW-Qr-uUf"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="leH-EF-iUN" appends="YES" id="B16-ud-UDE"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fht-oz-AZc"/>
                     <connections>
                         <outlet property="collectionView" destination="U6S-pr-JFh" id="UfU-sf-5rV"/>
+                        <outlet property="commentContainerBottomConstraint" destination="j3g-xW-h2K" id="3ef-fA-cIo"/>
                         <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="zok-wV-QgL"/>
                         <outlet property="mapView" destination="U6V-cI-0GN" id="Yzv-lk-7CK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhd-EY-Qhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="leH-EF-iUN">
+                    <connections>
+                        <action selector="swippedDown:" destination="Y9S-Rf-zMj" id="pMP-gN-9lp"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1397" y="-651"/>
         </scene>
