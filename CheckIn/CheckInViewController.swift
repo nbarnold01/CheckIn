@@ -11,7 +11,6 @@ import MapKit
 import CoreLocation
 import QuartzCore
 
-
 let StopLocationMonitoringNotification:String = "stopLocationMonitoring"
 
 class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate {
@@ -20,7 +19,7 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentTextView: HPGrowingTextView!
     
     @IBOutlet weak var commentContainerBottomConstraint: NSLayoutConstraint!
     
