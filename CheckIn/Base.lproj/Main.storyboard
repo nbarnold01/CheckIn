@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="701" y="-656"/>
         </scene>
-        <!--Check In View Controller-->
+        <!--Check In-->
         <scene sceneID="Dgt-X5-Hqz">
             <objects>
-                <viewController id="Y9S-Rf-zMj" customClass="CheckInViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Check In" id="Y9S-Rf-zMj" customClass="CheckInViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8fD-SR-kOB"/>
                         <viewControllerLayoutGuide type="bottom" id="M4v-4M-7H3"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U6V-cI-0GN">
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6V-cI-0GN">
                                 <rect key="frame" x="16" y="200" width="568" height="291"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Wqn-SU-q06"/>
@@ -61,6 +61,9 @@
                                         <state key="normal" title="Post">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedPost:" destination="Y9S-Rf-zMj" eventType="touchUpInside" id="V7i-HR-FRE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,7 +146,7 @@
                             <outletCollection property="gestureRecognizers" destination="leH-EF-iUN" appends="YES" id="B16-ud-UDE"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="fht-oz-AZc"/>
+                    <navigationItem key="navigationItem" title="Check In" id="fht-oz-AZc"/>
                     <connections>
                         <outlet property="collectionView" destination="U6S-pr-JFh" id="UfU-sf-5rV"/>
                         <outlet property="commentContainerBottomConstraint" destination="j3g-xW-h2K" id="3ef-fA-cIo"/>

@@ -80,6 +80,12 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
+    @IBAction func pressedPost(sender: UIButton) {
+        
+        self.commentTextView.text = nil;
+        self.commentTextView.resignFirstResponder()
+        
+    }
     //MARK:Private
 
     func initializeLocationManager() {
