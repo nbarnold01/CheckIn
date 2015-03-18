@@ -110,24 +110,23 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
             self,
             selector:Selector(stopLocationMonitoring()),
             name: StopLocationMonitoringNotification,
-            object: nil
-        )
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("keyboardWillShow:"),
-            name: UIKeyboardWillChangeFrameNotification,
             object: nil)
         
+        
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: Selector("keyboardWillHide:"),
-            name:UIKeyboardWillHideNotification, object: nil);
-
+            selector: Selector("keyboardWillChange:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil)
         
         
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("keyboardWillChange:"),
+            name:UIKeyboardWillHideNotification, object: nil)
     }
+    
+    
     
     func deregisterNotifications () {
      
@@ -245,7 +244,7 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     //MARK:UIKeyboard Methods
     
     
-    func keyboardWillShow(notification:NSNotification) {
+    func keyboardWillChange(notification:NSNotification) {
         
         var info = notification.userInfo!
         
@@ -254,7 +253,17 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as Double
     
-        self.commentContainerBottomConstraint.constant = keyboardFrame.size.height - self.bottomLayoutGuide.length
+        
+        if (notification.name == UIKeyboardWillShowNotification) {
+            //raise it up
+            self.commentContainerBottomConstraint.constant = keyboardFrame.size.height - self.bottomLayoutGuide.length
+
+        } else {
+            
+            //snap to bottom
+            self.commentContainerBottomConstraint.constant = 0
+
+        }
         self.commentTextView.setNeedsUpdateConstraints()
         
         
@@ -273,40 +282,6 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         )
 
     }
-    
-
-
-
-    func keyboardWillHide(notification:NSNotification) {
-        
-        var info = notification.userInfo!
-        
-        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        
-        let curve = info[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
-        
-        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as Double
-        
-        self.commentContainerBottomConstraint.constant = 0
-        self.commentTextView.setNeedsUpdateConstraints()
-        
-        
-        //This sucks. Perhaps it will be fixed in a new version of XCode/Swift
-        let animationOptions = UIViewAnimationOptions(UInt((info[UIKeyboardAnimationCurveUserInfoKey] as NSNumber).integerValue << 16))
-        
-        
-        UIView.animateWithDuration(duration,
-            delay: 0.0,
-            options: animationOptions,
-            animations: {()in
-                self.view.layoutIfNeeded()
-            },completion: {(Bool)  in
-                
-            }
-        )
-    }
-
-
     
     
 
