@@ -19,10 +19,11 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var commentTextView: HPGrowingTextView!
     
     @IBOutlet weak var commentContainerBottomConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet weak var commentTextView: ExpandingTextView!
     
     var locationManager:CLLocationManager
     

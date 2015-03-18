@@ -8,6 +8,8 @@
 //  Hat Tip to https://github.com/adam-siton/AUIAutoGrowingTextView
 
 import Foundation
+import UIKit
+
 
 class ExpandingTextView:UITextView {
     

@@ -9,6 +9,7 @@
 #ifndef _CheckIn_Bridging_Header_h
 #define _CheckIn_Bridging_Header_h
 
-#import <HPGrowingTextView/HPGrowingTextView.h>
+#import <AFNetworking/AFNetworking.h>
+
 
 #endif
