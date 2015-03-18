@@ -54,6 +54,7 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
         self.mapView.layer.cornerRadius = 4
         self.commentTextView.layer.cornerRadius = 2
+        self.commentTextView.maxHeight = 130
         
         initializeLocationManager()
         

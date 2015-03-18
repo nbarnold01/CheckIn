@@ -15,13 +15,13 @@ class ExpandingTextView:UITextView {
     
     var heightConstraint:NSLayoutConstraint?
     var minHeight:CGFloat = 0
-    var maxHeight:CGFloat = 200
+    var maxHeight:CGFloat = CGFloat.max
     
     required init(coder aDecoder: NSCoder) {
         
 
         super.init(coder: aDecoder)
-        
+        self.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
 //        commonInit() 
 
         
@@ -63,12 +63,13 @@ class ExpandingTextView:UITextView {
         
         self.heightConstraint?.constant = intrinsicSize.height;
         
-        
-        if intrinsicSize.height <= self.bounds.size.height {
-            var topCorrect = self.bounds.size.height - self.contentSize.height;
-            topCorrect = (topCorrect<0 ? 0:topCorrect)
-            self.contentOffset = CGPointMake(0, -topCorrect)
-        }
+        //Supposed to correct for scrolling but doesn't quite work
+//        if intrinsicSize.height <= self.bounds.size.height {
+//            var topCorrect = self.bounds.size.height - self.contentSize.height;
+//            NSLog("topCorrect: %@", topCorrect)
+//            topCorrect = (topCorrect < 0 ? 0:topCorrect)
+//            self.contentOffset = CGPointMake(0, -topCorrect)
+//        }
 
         
         

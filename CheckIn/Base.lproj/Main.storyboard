@@ -47,7 +47,7 @@
                                         <rect key="frame" x="5" y="5" width="513" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="I04-hz-dee"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="I04-hz-dee"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -112,6 +112,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="M4v-4M-7H3" firstAttribute="top" secondItem="U6V-cI-0GN" secondAttribute="bottom" constant="60" id="2Yi-8d-cgb"/>
                             <constraint firstItem="egR-Ku-4ON" firstAttribute="top" secondItem="U6V-cI-0GN" secondAttribute="bottom" constant="16" id="GDn-uk-Dwt"/>
                             <constraint firstItem="U6V-cI-0GN" firstAttribute="leading" secondItem="DT2-Oc-Nlt" secondAttribute="leadingMargin" id="H0t-o8-VhM"/>
                             <constraint firstItem="egR-Ku-4ON" firstAttribute="leading" secondItem="DT2-Oc-Nlt" secondAttribute="leading" id="PDq-KR-q5H"/>
@@ -123,6 +124,11 @@
                             <constraint firstAttribute="trailing" secondItem="egR-Ku-4ON" secondAttribute="trailing" id="pqB-bc-mky"/>
                             <constraint firstItem="U6S-pr-JFh" firstAttribute="top" secondItem="8fD-SR-kOB" secondAttribute="bottom" id="uhW-Qr-uUf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GDn-uk-Dwt"/>
+                            </mask>
+                        </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="U6S-pr-JFh"/>
@@ -141,7 +147,7 @@
                     <connections>
                         <outlet property="collectionView" destination="U6S-pr-JFh" id="UfU-sf-5rV"/>
                         <outlet property="commentContainerBottomConstraint" destination="j3g-xW-h2K" id="3ef-fA-cIo"/>
-                        <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="zok-wV-QgL"/>
+                        <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="V7S-cS-dZK"/>
                         <outlet property="mapView" destination="U6V-cI-0GN" id="Yzv-lk-7CK"/>
                     </connections>
                 </viewController>
