@@ -10,10 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 import QuartzCore
+import AssetsLibrary
 
 let StopLocationMonitoringNotification:String = "stopLocationMonitoring"
 
-class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate {
+class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,23 +26,20 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var commentTextView: ExpandingTextView!
     
-    var locationManager:CLLocationManager
+    var selectedImages = Array<UIImage>()
+    
+    var cameraUI:UIImagePickerController = UIImagePickerController()
+    
+    var locationManager:CLLocationManager = CLLocationManager()
     
     var shouldAutomaticallyMoveMap = true
+    
     
     required init(coder aDecoder: NSCoder) {
         
         self.locationManager = CLLocationManager()
 
         super.init(coder: aDecoder)
-
-    }
-  
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        
-        self.locationManager = CLLocationManager()
-        
-        super.init(nibName:nibNameOrNil, bundle: nibBundleOrNil)
 
     }
     
@@ -148,7 +146,20 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         self.mapView.showsUserLocation = false;
     }
     
-    //MARK: UICollectionView Datasource and delegate
+    
+    func showImagePicker () {
+        
+        cameraUI = UIImagePickerController()
+        cameraUI.delegate = self
+        cameraUI.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        cameraUI.mediaTypes = [kUTTypeImage]
+        cameraUI.allowsEditing = true
+        
+        self.presentViewController(cameraUI, animated: true, completion: nil)
+        
+    }
+    
+    //MARK: UICollectionView Datasource
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         
@@ -157,7 +168,7 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1
+        return 1 + self.selectedImages.count
         
     }
     
@@ -167,15 +178,29 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
   
        
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as ImageCell
         
-        cell.backgroundColor = UIColor.greenColor()
-        // Configure the cell
+        
+        if (indexPath.row == 0){
+            cell.imageView.image = nil;
+            cell.backgroundColor = UIColor.greenColor()
+
+        } else {
+            cell.imageView.image = self.selectedImages[self.selectedImages.count - indexPath.row]
+        }
+        
         return cell
         
         
     }
     
+    //MARK:UICollectionView Delegate Methods
+    
+    func  collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == 0){
+            self.showImagePicker()
+        }
+    }
     
     //MARK: CLLocationManager Delegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -291,6 +316,26 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-
+    
+    //MARK:ImagePicker Delegate
+    
+    func imagePickerControllerDidCancel(picker:UIImagePickerController)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker:UIImagePickerController!, didFinishPickingMediaWithInfo info:NSDictionary)
+    {
+        var imageToSave:UIImage  = info.objectForKey(UIImagePickerControllerEditedImage) as UIImage
+        
+        selectedImages.append(imageToSave)
+        
+        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.collectionView .reloadData()
+        })
+        
+    }
+    
+    
 }
 

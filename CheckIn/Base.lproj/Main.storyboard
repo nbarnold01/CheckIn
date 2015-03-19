@@ -96,14 +96,29 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="3XM-Eo-l5I">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="3XM-Eo-l5I" customClass="ImageCell" customModule="CheckIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6M-AV-Qe3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="n6M-AV-Qe3" secondAttribute="trailing" id="CHr-ot-cBv"/>
+                                            <constraint firstItem="n6M-AV-Qe3" firstAttribute="leading" secondItem="3XM-Eo-l5I" secondAttribute="leading" id="EDe-Mw-KEr"/>
+                                            <constraint firstAttribute="bottom" secondItem="n6M-AV-Qe3" secondAttribute="bottom" id="Pp7-o0-9K3"/>
+                                            <constraint firstItem="n6M-AV-Qe3" firstAttribute="top" secondItem="3XM-Eo-l5I" secondAttribute="top" id="q1J-E7-lx0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="n6M-AV-Qe3" id="iDQ-SC-AEW"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
