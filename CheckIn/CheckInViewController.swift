@@ -197,8 +197,11 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     //MARK:UICollectionView Delegate Methods
     
     func  collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         if (indexPath.row == 0){
             self.showImagePicker()
+        } else {
+            self.performSegueWithIdentifier("showPicturesViewController", sender: self);
         }
     }
     

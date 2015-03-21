@@ -167,6 +167,7 @@
                         <outlet property="commentContainerBottomConstraint" destination="j3g-xW-h2K" id="3ef-fA-cIo"/>
                         <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="V7S-cS-dZK"/>
                         <outlet property="mapView" destination="U6V-cI-0GN" id="Yzv-lk-7CK"/>
+                        <segue destination="dkD-Rh-18Y" kind="show" identifier="showPicturesViewController" id="rgM-1P-Muo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhd-EY-Qhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,6 +178,55 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1397" y="-651"/>
+        </scene>
+        <!--Pictures-->
+        <scene sceneID="jTn-fH-1dL">
+            <objects>
+                <collectionViewController title="Pictures" id="dkD-Rh-18Y" customClass="PicturesViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" id="Yue-mU-0Bi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BHj-QX-LQM">
+                            <size key="itemSize" width="300" height="300"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="mwN-eU-kTg" customClass="ImageCell" customModule="CheckIn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCm-1V-rZ8">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="OCm-1V-rZ8" firstAttribute="leading" secondItem="mwN-eU-kTg" secondAttribute="leading" id="dha-JE-h7d"/>
+                                    <constraint firstAttribute="bottom" secondItem="OCm-1V-rZ8" secondAttribute="bottom" id="fdn-Ox-4h6"/>
+                                    <constraint firstAttribute="trailing" secondItem="OCm-1V-rZ8" secondAttribute="trailing" id="lLT-0t-YIC"/>
+                                    <constraint firstItem="OCm-1V-rZ8" firstAttribute="top" secondItem="mwN-eU-kTg" secondAttribute="top" id="m8b-8W-tMf"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="OCm-1V-rZ8" id="s1e-ik-zr7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dkD-Rh-18Y" id="KTC-UA-RuF"/>
+                            <outlet property="delegate" destination="dkD-Rh-18Y" id="lQ9-yp-bXD"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlW-8f-Bhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="-651"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */; };
-		3136AC1C1AA7047F00D4ECA9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC1B1AA7047F00D4ECA9 /* FirstViewController.swift */; };
 		3136AC1E1AA7047F00D4ECA9 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */; };
 		3136AC211AA7047F00D4ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */; };
 		3136AC231AA7047F00D4ECA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC221AA7047F00D4ECA9 /* Images.xcassets */; };
@@ -20,6 +19,8 @@
 		31A9EBC11AB9621800F3F41A /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */; };
 		31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */; };
 		31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319C1AAD6BB00046A8A5 /* MapKit.framework */; };
+		31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
+		31D43AAE1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
 		D15C08EB31807AD626003626 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1346D9B40A077BD2545085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +38,6 @@
 		3136AC141AA7047F00D4ECA9 /* CheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136AC181AA7047F00D4ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3136AC1B1AA7047F00D4ECA9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		3136AC201AA7047F00D4ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3136AC221AA7047F00D4ECA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -52,6 +52,7 @@
 		31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandingTextView.swift; path = Views/ExpandingTextView.swift; sourceTree = "<group>"; };
 		31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		31CA319C1AAD6BB00046A8A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PicturesViewController.swift; path = Controllers/PicturesViewController.swift; sourceTree = "<group>"; };
 		412FA064C8E46DE99837D9FE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		92AD2FFBFEB4540410983CC0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9A1346D9B40A077BD2545085 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,8 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */,
-				3136AC1B1AA7047F00D4ECA9 /* FirstViewController.swift */,
-				3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */,
+				31D43AAB1ABD7F17009FC38F /* Controllers */,
 				3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */,
 				31A9EBC21AB9621E00F3F41A /* Views */,
 				3136AC221AA7047F00D4ECA9 /* Images.xcassets */,
@@ -168,6 +168,15 @@
 				313C3FDB1ABABD8700F2DC9B /* ImageCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		31D43AAB1ABD7F17009FC38F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */,
+				31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B9D3233539BB6C0EB72C0ABA /* Pods */ = {
@@ -318,8 +327,8 @@
 			files = (
 				3136AC1E1AA7047F00D4ECA9 /* CheckInViewController.swift in Sources */,
 				3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */,
+				31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
 				31A9EBC11AB9621800F3F41A /* ExpandingTextView.swift in Sources */,
-				3136AC1C1AA7047F00D4ECA9 /* FirstViewController.swift in Sources */,
 				313C3FDC1ABABD8700F2DC9B /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3136AC321AA7047F00D4ECA9 /* CheckInTests.swift in Sources */,
+				31D43AAE1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
