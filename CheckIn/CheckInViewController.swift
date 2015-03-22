@@ -339,6 +339,14 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
     }
     
+    //MARK:Navigation
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+
+        if (segue.identifier == "showPicturesViewController"){
+            let pixController = segue.destinationViewController as PicturesViewController
+            pixController.pictures = self.selectedImages
+        }
+    }
 }
 

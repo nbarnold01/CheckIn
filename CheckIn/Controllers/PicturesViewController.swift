@@ -23,31 +23,23 @@ class PicturesViewController:UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1 + self.pictures.count
+        return self.pictures.count
         
     }
-//    
-//    
-//    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-//    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        
-//        
-//        
-//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as ImageCell
-//        
-//        
-//        if (indexPath.row == 0){
-//            cell.imageView.image = nil;
-//            cell.backgroundColor = UIColor.greenColor()
-//            
-//        } else {
-//            cell.imageView.image = self.pictures[self.pictures.count - indexPath.row]
-//        }
-//        
-//        return cell
-//        
-//        
-//    }
+    
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell:ImageCell = collectionView.dequeueReusableCellWithReuseIdentifier("otherImageCell", forIndexPath: indexPath) as ImageCell
+        
+        
+        cell.imageView.image = self.pictures[(self.pictures.count-1) - indexPath.row]
+        
+        return cell
+        
+        
+    }
     
     //MARK:UICollectionView Delegate Methods
     

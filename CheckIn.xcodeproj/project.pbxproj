@@ -20,7 +20,6 @@
 		31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */; };
 		31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319C1AAD6BB00046A8A5 /* MapKit.framework */; };
 		31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
-		31D43AAE1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
 		D15C08EB31807AD626003626 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1346D9B40A077BD2545085 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -338,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3136AC321AA7047F00D4ECA9 /* CheckInTests.swift in Sources */,
-				31D43AAE1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
