@@ -82,6 +82,8 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         
         self.commentTextView.text = nil;
         self.commentTextView.resignFirstResponder()
+        self.selectedImages.removeAll(keepCapacity: true);
+        self.collectionView .reloadData()
         
     }
     //MARK:Private
