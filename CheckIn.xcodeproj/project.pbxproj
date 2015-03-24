@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */; };
-		3136AC1E1AA7047F00D4ECA9 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */; };
 		3136AC211AA7047F00D4ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */; };
 		3136AC231AA7047F00D4ECA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC221AA7047F00D4ECA9 /* Images.xcassets */; };
 		3136AC261AA7047F00D4ECA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC241AA7047F00D4ECA9 /* LaunchScreen.xib */; };
@@ -17,6 +16,26 @@
 		313C3FDC1ABABD8700F2DC9B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313C3FDB1ABABD8700F2DC9B /* ImageCell.swift */; };
 		319EA9F41AAD909A0080FA78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319EA9F31AAD909A0080FA78 /* CoreLocation.framework */; };
 		31A9EBC11AB9621800F3F41A /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */; };
+		31BA07B81AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07B61AC13B6C009AEF32 /* DataModel.xcdatamodeld */; };
+		31BA07B91AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07B61AC13B6C009AEF32 /* DataModel.xcdatamodeld */; };
+		31BA07BB1AC13B79009AEF32 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BA07BA1AC13B79009AEF32 /* CoreData.framework */; };
+		31BA07BD1AC13D54009AEF32 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */; };
+		31BA07BE1AC13D54009AEF32 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */; };
+		31BA07C11AC13D94009AEF32 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C01AC13D94009AEF32 /* CheckIn.swift */; };
+		31BA07C21AC13D94009AEF32 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C01AC13D94009AEF32 /* CheckIn.swift */; };
+		31BA07C41AC14152009AEF32 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C31AC14152009AEF32 /* DataStore.swift */; };
+		31BA07C51AC14152009AEF32 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C31AC14152009AEF32 /* DataStore.swift */; };
+		31BA07C71AC14452009AEF32 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */; };
+		31BA07CA1AC14478009AEF32 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C91AC14478009AEF32 /* CoreDataStore.swift */; };
+		31BA07CB1AC14478009AEF32 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C91AC14478009AEF32 /* CoreDataStore.swift */; };
+		31BA07CC1AC145F6009AEF32 /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */; };
+		31BA07CD1AC145F9009AEF32 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313C3FDB1ABABD8700F2DC9B /* ImageCell.swift */; };
+		31BA07CE1AC145FD009AEF32 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */; };
+		31BA07CF1AC14608009AEF32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */; };
+		31BA07D01AC14644009AEF32 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
+		31BA07D21AC14679009AEF32 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */; };
+		31BA07D41AC14E2E009AEF32 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D31AC14E2E009AEF32 /* Person.swift */; };
+		31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D31AC14E2E009AEF32 /* Person.swift */; };
 		31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */; };
 		31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319C1AAD6BB00046A8A5 /* MapKit.framework */; };
 		31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
@@ -37,7 +56,6 @@
 		3136AC141AA7047F00D4ECA9 /* CheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136AC181AA7047F00D4ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		3136AC201AA7047F00D4ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3136AC221AA7047F00D4ECA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3136AC251AA7047F00D4ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,6 +67,15 @@
 		319EA9F31AAD909A0080FA78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31A9EBBF1AB95EE800F3F41A /* CheckIn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CheckIn-Bridging-Header.h"; sourceTree = "<group>"; };
 		31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandingTextView.swift; path = Views/ExpandingTextView.swift; sourceTree = "<group>"; };
+		31BA07B71AC13B6C009AEF32 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		31BA07BA1AC13B79009AEF32 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Controllers/CheckInViewController.swift; sourceTree = "<group>"; };
+		31BA07C01AC13D94009AEF32 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckIn.swift; path = Models/CheckIn.swift; sourceTree = "<group>"; };
+		31BA07C31AC14152009AEF32 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = Models/DataStore.swift; sourceTree = "<group>"; };
+		31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		31BA07C91AC14478009AEF32 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		31BA07D31AC14E2E009AEF32 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Models/Person.swift; sourceTree = "<group>"; };
 		31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		31CA319C1AAD6BB00046A8A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PicturesViewController.swift; path = Controllers/PicturesViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31BA07D21AC14679009AEF32 /* MobileCoreServices.framework in Frameworks */,
+				31BA07BB1AC13B79009AEF32 /* CoreData.framework in Frameworks */,
 				313C3FD81ABAB31400F2DC9B /* AssetsLibrary.framework in Frameworks */,
 				319EA9F41AAD909A0080FA78 /* CoreLocation.framework in Frameworks */,
 				31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */,
@@ -113,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */,
+				31BA07BF1AC13D74009AEF32 /* Models */,
 				31D43AAB1ABD7F17009FC38F /* Controllers */,
 				3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */,
 				31A9EBC21AB9621E00F3F41A /* Views */,
@@ -126,6 +156,7 @@
 		3136AC171AA7047F00D4ECA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				31BA07B61AC13B6C009AEF32 /* DataModel.xcdatamodeld */,
 				31A9EBBF1AB95EE800F3F41A /* CheckIn-Bridging-Header.h */,
 				3136AC181AA7047F00D4ECA9 /* Info.plist */,
 			);
@@ -152,6 +183,8 @@
 		31A9EBAF1AB95BD600F3F41A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */,
+				31BA07BA1AC13B79009AEF32 /* CoreData.framework */,
 				313C3FD71ABAB31400F2DC9B /* AssetsLibrary.framework */,
 				319EA9F31AAD909A0080FA78 /* CoreLocation.framework */,
 				31CA319C1AAD6BB00046A8A5 /* MapKit.framework */,
@@ -169,10 +202,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		31BA07BF1AC13D74009AEF32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */,
+				31BA07C91AC14478009AEF32 /* CoreDataStore.swift */,
+				31BA07C01AC13D94009AEF32 /* CheckIn.swift */,
+				31BA07D31AC14E2E009AEF32 /* Person.swift */,
+				31BA07C31AC14152009AEF32 /* DataStore.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		31D43AAB1ABD7F17009FC38F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3136AC1D1AA7047F00D4ECA9 /* CheckInViewController.swift */,
+				31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */,
 				31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */,
 			);
 			name = Controllers;
@@ -324,11 +369,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3136AC1E1AA7047F00D4ECA9 /* CheckInViewController.swift in Sources */,
 				3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */,
+				31BA07C41AC14152009AEF32 /* DataStore.swift in Sources */,
 				31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
+				31BA07B81AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */,
+				31BA07D41AC14E2E009AEF32 /* Person.swift in Sources */,
+				31BA07CA1AC14478009AEF32 /* CoreDataStore.swift in Sources */,
 				31A9EBC11AB9621800F3F41A /* ExpandingTextView.swift in Sources */,
 				313C3FDC1ABABD8700F2DC9B /* ImageCell.swift in Sources */,
+				31BA07C71AC14452009AEF32 /* CoreDataHelper.swift in Sources */,
+				31BA07C11AC13D94009AEF32 /* CheckIn.swift in Sources */,
+				31BA07BD1AC13D54009AEF32 /* CheckInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +387,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31BA07CB1AC14478009AEF32 /* CoreDataStore.swift in Sources */,
+				31BA07CC1AC145F6009AEF32 /* ExpandingTextView.swift in Sources */,
 				3136AC321AA7047F00D4ECA9 /* CheckInTests.swift in Sources */,
+				31BA07C21AC13D94009AEF32 /* CheckIn.swift in Sources */,
+				31BA07D01AC14644009AEF32 /* PicturesViewController.swift in Sources */,
+				31BA07BE1AC13D54009AEF32 /* CheckInViewController.swift in Sources */,
+				31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */,
+				31BA07CD1AC145F9009AEF32 /* ImageCell.swift in Sources */,
+				31BA07CE1AC145FD009AEF32 /* CoreDataHelper.swift in Sources */,
+				31BA07C51AC14152009AEF32 /* DataStore.swift in Sources */,
+				31BA07CF1AC14608009AEF32 /* AppDelegate.swift in Sources */,
+				31BA07B91AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +616,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		31BA07B61AC13B6C009AEF32 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				31BA07B71AC13B6C009AEF32 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 31BA07B71AC13B6C009AEF32 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3136AC0C1AA7047F00D4ECA9 /* Project object */;
 }

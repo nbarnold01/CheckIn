@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import QuartzCore
 import AssetsLibrary
+import MobileCoreServices
+import CoreData
 
 let StopLocationMonitoringNotification:String = "stopLocationMonitoring"
 
@@ -80,13 +82,32 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBAction func pressedPost(sender: UIButton) {
         
+        self.savePost()
+        
         self.commentTextView.text = nil;
         self.commentTextView.resignFirstResponder()
         self.selectedImages.removeAll(keepCapacity: true);
         self.collectionView .reloadData()
         
     }
+    
+    
+    
     //MARK:Private
+    
+    
+    func savePost() {
+        var checkIn: CheckIn = NSEntityDescription.insertNewObjectForEntityForName("CheckIn"
+, inManagedObjectContext: CoreDataHelper.sharedInstance.managedObjectContext!) as CheckIn
+        
+        checkIn.latitude = self.mapView.centerCoordinate.latitude
+        checkIn.longitude = self.mapView.centerCoordinate.longitude
+        
+        checkIn.note = self.commentTextView.text
+        checkIn.date = NSDate()
+        
+        CoreDataHelper.sharedInstance.saveContext(CoreDataHelper.sharedInstance.managedObjectContext!)
+    }
 
     func initializeLocationManager() {
         
