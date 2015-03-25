@@ -36,6 +36,8 @@
 		31BA07D21AC14679009AEF32 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */; };
 		31BA07D41AC14E2E009AEF32 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D31AC14E2E009AEF32 /* Person.swift */; };
 		31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D31AC14E2E009AEF32 /* Person.swift */; };
+		31BA07D71AC154A6009AEF32 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D61AC154A6009AEF32 /* TripViewController.swift */; };
+		31BA07D81AC154A6009AEF32 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07D61AC154A6009AEF32 /* TripViewController.swift */; };
 		31CA319B1AAD6BAA0046A8A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */; };
 		31CA319D1AAD6BB00046A8A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CA319C1AAD6BB00046A8A5 /* MapKit.framework */; };
 		31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */; };
@@ -76,6 +78,7 @@
 		31BA07C91AC14478009AEF32 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		31BA07D31AC14E2E009AEF32 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Models/Person.swift; sourceTree = "<group>"; };
+		31BA07D61AC154A6009AEF32 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripViewController.swift; path = Controllers/TripViewController.swift; sourceTree = "<group>"; };
 		31CA319A1AAD6BAA0046A8A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		31CA319C1AAD6BB00046A8A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PicturesViewController.swift; path = Controllers/PicturesViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */,
+				31BA07D61AC154A6009AEF32 /* TripViewController.swift */,
 				31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */,
 			);
 			name = Controllers;
@@ -378,6 +382,7 @@
 				31A9EBC11AB9621800F3F41A /* ExpandingTextView.swift in Sources */,
 				313C3FDC1ABABD8700F2DC9B /* ImageCell.swift in Sources */,
 				31BA07C71AC14452009AEF32 /* CoreDataHelper.swift in Sources */,
+				31BA07D71AC154A6009AEF32 /* TripViewController.swift in Sources */,
 				31BA07C11AC13D94009AEF32 /* CheckIn.swift in Sources */,
 				31BA07BD1AC13D54009AEF32 /* CheckInViewController.swift in Sources */,
 			);
@@ -393,6 +398,7 @@
 				31BA07C21AC13D94009AEF32 /* CheckIn.swift in Sources */,
 				31BA07D01AC14644009AEF32 /* PicturesViewController.swift in Sources */,
 				31BA07BE1AC13D54009AEF32 /* CheckInViewController.swift in Sources */,
+				31BA07D81AC154A6009AEF32 /* TripViewController.swift in Sources */,
 				31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */,
 				31BA07CD1AC145F9009AEF32 /* ImageCell.swift in Sources */,
 				31BA07CE1AC145FD009AEF32 /* CoreDataHelper.swift in Sources */,
