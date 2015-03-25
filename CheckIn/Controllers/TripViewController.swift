@@ -8,22 +8,25 @@
 
 import UIKit
 import Foundation
+import CoreData
+class TripViewController: UITableViewController,NSFetchedResultsControllerDelegate {
 
-class TripViewController: UITableViewController {
 
+    
     var fetchedResultsController: NSFetchedResultsController {
         // return if already initialized
         if self._fetchedResultsController != nil {
             return self._fetchedResultsController!
         }
-        let managedObjectContext = self.managedObjectContext!
+        
+        let managedObjectContext = CoreDataHelper.sharedInstance.managedObjectContext!
         
         /* `NSFetchRequest` config
         fetch all `Item`s
         order them alphabetically by name
         at least one sort order _is_ required */
-        let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedObjectContext)
-        let sort = NSSortDescriptor(key: "name", ascending: true)
+        let entity = NSEntityDescription.entityForName(NSStringFromClass(CheckIn), inManagedObjectContext: managedObjectContext)
+        let sort = NSSortDescriptor(key: "date", ascending: true)
         let req = NSFetchRequest()
         req.entity = entity
         req.sortDescriptors = [sort]
@@ -56,20 +59,75 @@ class TripViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    
-//
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//    
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    
+    
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("blandCell", forIndexPath: indexPath) as UITableViewCell
+        self.configureCell(cell, atIndexPath: indexPath)
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let info = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        return info.numberOfObjects
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func configureCell(cell: UITableViewCell,
+        atIndexPath indexPath: NSIndexPath) {
+            let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as CheckIn
+            cell.textLabel?.text = item.note
+    }
+    
+    
+    //MARK:NSFetchedResutlsController Delegate Methods
+    
+    // fetched results controller delegate
+    
+    /* called first
+    begins update to `UITableView`
+    ensures all updates are animated simultaneously */
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
+    }
+    
+    /* called:
+    - when a new model is created
+    - when an existing model is updated
+    - when an existing model is deleted */
+    func controller(controller: NSFetchedResultsController,
+        didChangeObject object: AnyObject,
+        atIndexPath indexPath: NSIndexPath,
+        forChangeType type: NSFetchedResultsChangeType,
+        newIndexPath: NSIndexPath) {
+            switch type {
+            case .Insert:
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Update:
+                let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+                self.configureCell(cell!, atIndexPath: indexPath)
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .Move:
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Delete:
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            default:
+                return
+            }
+    }
+    
+    
+    /* called last
+    tells `UITableView` updates are complete */
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
+    }
     
     /*
     // MARK: - Navigation
