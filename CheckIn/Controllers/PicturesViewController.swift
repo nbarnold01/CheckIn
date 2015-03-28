@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PicturesViewController:UICollectionViewController {
+class PicturesViewController:UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var pictures:Array<UIImage> = Array<UIImage>()
     
@@ -50,6 +50,16 @@ class PicturesViewController:UICollectionViewController {
     
     
     
+//    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsetsMake(10, 20, 10, 20)
+//    }
     
-    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        //20 is the margin
+        var width = collectionView.frame.width - 30
+        
+        return CGSizeMake(width, width)
+    }
 }

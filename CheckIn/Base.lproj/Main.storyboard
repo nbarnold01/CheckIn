@@ -39,13 +39,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="POi-Yn-SqJ">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GLS-vj-8Xy">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -209,6 +209,7 @@
                         <outlet property="commentContainerBottomConstraint" destination="j3g-xW-h2K" id="3ef-fA-cIo"/>
                         <outlet property="commentTextView" destination="mXs-Fh-Fn3" id="V7S-cS-dZK"/>
                         <outlet property="mapView" destination="U6V-cI-0GN" id="Yzv-lk-7CK"/>
+                        <outlet property="textViewContainer" destination="egR-Ku-4ON" id="BqN-Oj-V7e"/>
                         <segue destination="dkD-Rh-18Y" kind="show" identifier="showPicturesViewController" id="rgM-1P-Muo"/>
                     </connections>
                 </viewController>

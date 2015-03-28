@@ -17,16 +17,19 @@ import CoreData
 let StopLocationMonitoringNotification:String = "stopLocationMonitoring"
 
 class CheckInViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate,MKMapViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
     @IBOutlet weak var commentContainerBottomConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet weak var commentTextView: ExpandingTextView!
+    
+    @IBOutlet weak var textViewContainer: UIView!
+    
     
     var selectedImages = Array<UIImage>()
     
@@ -35,6 +38,8 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     var locationManager:CLLocationManager = CLLocationManager()
     
     var shouldAutomaticallyMoveMap = true
+    
+    
     
     
     required init(coder aDecoder: NSCoder) {
@@ -56,7 +61,11 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
         self.commentTextView.layer.cornerRadius = 2
         self.commentTextView.maxHeight = 130
         
-        initializeLocationManager()
+        self.customizeColors()
+        
+        
+        self.initializeLocationManager()
+        
         
         self.mapView.delegate = self;
     }
@@ -94,7 +103,11 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     //MARK:Private
-    
+    func customizeColors () {
+        self.collectionView.backgroundColor = Blue
+        self.commentTextView.textColor = Black
+        self.textViewContainer.backgroundColor = Blue
+    }
     
     func savePost() {
         var checkIn: CheckIn = NSEntityDescription.insertNewObjectForEntityForName("CheckIn"

@@ -9,11 +9,15 @@
 import UIKit
 import Foundation
 import CoreData
+
+
 class TripViewController: UITableViewController,NSFetchedResultsControllerDelegate {
 
 
     
     var fetchedResultsController: NSFetchedResultsController {
+        
+        
         // return if already initialized
         if self._fetchedResultsController != nil {
             return self._fetchedResultsController!
@@ -21,15 +25,19 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
         
         let managedObjectContext = CoreDataHelper.sharedInstance.managedObjectContext!
         
+        
+        
         /* `NSFetchRequest` config
-        fetch all `Item`s
-        order them alphabetically by name
+        fetch all `Checkin`s
+        order them descending by date
         at least one sort order _is_ required */
+        
         let entity = NSEntityDescription.entityForName(NSStringFromClass(CheckIn), inManagedObjectContext: managedObjectContext)
-        let sort = NSSortDescriptor(key: "date", ascending: true)
+        let sort = NSSortDescriptor(key: "date", ascending: false)
         let req = NSFetchRequest()
         req.entity = entity
         req.sortDescriptors = [sort]
+        
         
         /* NSFetchedResultsController initialization
         a `nil` `sectionNameKeyPath` generates a single section */
@@ -53,6 +61,7 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +69,8 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK:TableViewDataSource
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311583DB1AC6920400A67FE3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DA1AC6920400A67FE3 /* Colors.swift */; };
+		311583DC1AC6920400A67FE3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DA1AC6920400A67FE3 /* Colors.swift */; };
 		3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */; };
 		3136AC211AA7047F00D4ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */; };
 		3136AC231AA7047F00D4ECA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC221AA7047F00D4ECA9 /* Images.xcassets */; };
@@ -23,8 +25,6 @@
 		31BA07BE1AC13D54009AEF32 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */; };
 		31BA07C11AC13D94009AEF32 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C01AC13D94009AEF32 /* CheckIn.swift */; };
 		31BA07C21AC13D94009AEF32 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C01AC13D94009AEF32 /* CheckIn.swift */; };
-		31BA07C41AC14152009AEF32 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C31AC14152009AEF32 /* DataStore.swift */; };
-		31BA07C51AC14152009AEF32 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C31AC14152009AEF32 /* DataStore.swift */; };
 		31BA07C71AC14452009AEF32 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */; };
 		31BA07CA1AC14478009AEF32 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C91AC14478009AEF32 /* CoreDataStore.swift */; };
 		31BA07CB1AC14478009AEF32 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BA07C91AC14478009AEF32 /* CoreDataStore.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		311583DA1AC6920400A67FE3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
 		3136AC141AA7047F00D4ECA9 /* CheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136AC181AA7047F00D4ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		31BA07BA1AC13B79009AEF32 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Controllers/CheckInViewController.swift; sourceTree = "<group>"; };
 		31BA07C01AC13D94009AEF32 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckIn.swift; path = Models/CheckIn.swift; sourceTree = "<group>"; };
-		31BA07C31AC14152009AEF32 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = Models/DataStore.swift; sourceTree = "<group>"; };
 		31BA07C61AC14452009AEF32 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		31BA07C91AC14478009AEF32 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		31BA07D11AC14679009AEF32 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -120,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		311583DD1AC6920900A67FE3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				311583DA1AC6920400A67FE3 /* Colors.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		3136AC0B1AA7047F00D4ECA9 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +152,7 @@
 		3136AC161AA7047F00D4ECA9 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				311583DD1AC6920900A67FE3 /* Helpers */,
 				3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */,
 				31BA07BF1AC13D74009AEF32 /* Models */,
 				31D43AAB1ABD7F17009FC38F /* Controllers */,
@@ -212,7 +221,6 @@
 				31BA07C91AC14478009AEF32 /* CoreDataStore.swift */,
 				31BA07C01AC13D94009AEF32 /* CheckIn.swift */,
 				31BA07D31AC14E2E009AEF32 /* Person.swift */,
-				31BA07C31AC14152009AEF32 /* DataStore.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -221,8 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				31BA07BC1AC13D54009AEF32 /* CheckInViewController.swift */,
-				31BA07D61AC154A6009AEF32 /* TripViewController.swift */,
 				31D43AAC1ABD7F30009FC38F /* PicturesViewController.swift */,
+				31BA07D61AC154A6009AEF32 /* TripViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -374,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */,
-				31BA07C41AC14152009AEF32 /* DataStore.swift in Sources */,
+				311583DB1AC6920400A67FE3 /* Colors.swift in Sources */,
 				31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
 				31BA07B81AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */,
 				31BA07D41AC14E2E009AEF32 /* Person.swift in Sources */,
@@ -400,9 +408,9 @@
 				31BA07BE1AC13D54009AEF32 /* CheckInViewController.swift in Sources */,
 				31BA07D81AC154A6009AEF32 /* TripViewController.swift in Sources */,
 				31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */,
+				311583DC1AC6920400A67FE3 /* Colors.swift in Sources */,
 				31BA07CD1AC145F9009AEF32 /* ImageCell.swift in Sources */,
 				31BA07CE1AC145FD009AEF32 /* CoreDataHelper.swift in Sources */,
-				31BA07C51AC14152009AEF32 /* DataStore.swift in Sources */,
 				31BA07CF1AC14608009AEF32 /* AppDelegate.swift in Sources */,
 				31BA07B91AC13B6C009AEF32 /* DataModel.xcdatamodeld in Sources */,
 			);
