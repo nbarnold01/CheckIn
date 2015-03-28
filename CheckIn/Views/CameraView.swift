@@ -12,7 +12,7 @@ import UIKit
 class CameraView:UIView {
     
     var lineColor = Blue
-    var borderWidth:CGFloat = 8
+    var borderWidth:CGFloat = 4
     var shapeLayer:CAShapeLayer?
     
     override init(frame: CGRect) {
@@ -49,7 +49,7 @@ class CameraView:UIView {
         
         let cornerRadius:CGFloat = 8.0
         
-        var frame:CGRect = self.bounds
+        var frame:CGRect = CGRectInset(self.bounds, self.borderWidth, self.borderWidth)
         //drawing a border around a view
         var height:CGFloat = frame.size.height - CGFloat(cornerRadius)
         CGPathMoveToPoint(path, nil, 0, height)
