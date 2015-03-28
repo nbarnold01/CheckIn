@@ -138,6 +138,39 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cameraViewCollectionCell" id="PLm-bE-Kcp">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-ys-SsR" customClass="CameraView" customModule="CheckIn" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-aS-g7F">
+                                                            <rect key="frame" x="15.5" y="65" width="69" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="gIf-aS-g7F" secondAttribute="centerY" constant="-23.5" id="BVk-Cc-SPg"/>
+                                                        <constraint firstAttribute="centerX" secondItem="gIf-aS-g7F" secondAttribute="centerX" id="Xuq-RL-oOb"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Q0Q-ys-SsR" secondAttribute="bottom" id="AEd-hN-L0u"/>
+                                            <constraint firstItem="Q0Q-ys-SsR" firstAttribute="leading" secondItem="PLm-bE-Kcp" secondAttribute="leading" id="J4O-xt-pJP"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q0Q-ys-SsR" secondAttribute="trailing" id="JwQ-U2-j8v"/>
+                                            <constraint firstItem="Q0Q-ys-SsR" firstAttribute="top" secondItem="PLm-bE-Kcp" secondAttribute="top" id="TVr-jR-Fnk"/>
+                                        </constraints>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="3XM-Eo-l5I" customClass="ImageCell" customModule="CheckIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>

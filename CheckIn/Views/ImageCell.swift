@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import QuartzCore
 
 
 class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView : UIImageView!
+    
+    override func awakeFromNib() {
+        
+        self.imageView.layer.cornerRadius = 4
+        self.imageView.clipsToBounds = true
+    }
     
     
 }

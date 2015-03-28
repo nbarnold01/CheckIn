@@ -104,7 +104,7 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //MARK:Private
     func customizeColors () {
-        self.collectionView.backgroundColor = Blue
+        self.collectionView.backgroundColor = White
         self.commentTextView.textColor = Black
         self.textViewContainer.backgroundColor = Blue
     }
@@ -213,16 +213,19 @@ class CheckInViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
   
        
+        let reuseIdentifier = indexPath.row==0 ? "cameraViewCollectionCell" : "imageCell"
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as ImageCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
         
         
         if (indexPath.row == 0){
-            cell.imageView.image = nil;
-            cell.backgroundColor = UIColor.greenColor()
 
+            
         } else {
-            cell.imageView.image = self.selectedImages[self.selectedImages.count - indexPath.row]
+            var imageCell = cell as ImageCell
+            
+            
+            imageCell.imageView.image = self.selectedImages[self.selectedImages.count - indexPath.row]
         }
         
         return cell

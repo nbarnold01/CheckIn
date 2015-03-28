@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		311583DB1AC6920400A67FE3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DA1AC6920400A67FE3 /* Colors.swift */; };
 		311583DC1AC6920400A67FE3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DA1AC6920400A67FE3 /* Colors.swift */; };
+		311583DF1AC698A200A67FE3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DE1AC698A200A67FE3 /* CameraView.swift */; };
+		311583E01AC698A200A67FE3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311583DE1AC698A200A67FE3 /* CameraView.swift */; };
 		3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */; };
 		3136AC211AA7047F00D4ECA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC1F1AA7047F00D4ECA9 /* Main.storyboard */; };
 		3136AC231AA7047F00D4ECA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3136AC221AA7047F00D4ECA9 /* Images.xcassets */; };
@@ -56,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		311583DA1AC6920400A67FE3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Helpers/Colors.swift; sourceTree = "<group>"; };
+		311583DE1AC698A200A67FE3 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Views/CameraView.swift; sourceTree = "<group>"; };
 		3136AC141AA7047F00D4ECA9 /* CheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3136AC181AA7047F00D4ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3136AC191AA7047F00D4ECA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 			children = (
 				31A9EBC01AB9621800F3F41A /* ExpandingTextView.swift */,
 				313C3FDB1ABABD8700F2DC9B /* ImageCell.swift */,
+				311583DE1AC698A200A67FE3 /* CameraView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -381,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				311583DF1AC698A200A67FE3 /* CameraView.swift in Sources */,
 				3136AC1A1AA7047F00D4ECA9 /* AppDelegate.swift in Sources */,
 				311583DB1AC6920400A67FE3 /* Colors.swift in Sources */,
 				31D43AAD1ABD7F30009FC38F /* PicturesViewController.swift in Sources */,
@@ -409,6 +414,7 @@
 				31BA07D81AC154A6009AEF32 /* TripViewController.swift in Sources */,
 				31BA07D51AC14E2E009AEF32 /* Person.swift in Sources */,
 				311583DC1AC6920400A67FE3 /* Colors.swift in Sources */,
+				311583E01AC698A200A67FE3 /* CameraView.swift in Sources */,
 				31BA07CD1AC145F9009AEF32 /* ImageCell.swift in Sources */,
 				31BA07CE1AC145FD009AEF32 /* CoreDataHelper.swift in Sources */,
 				31BA07CF1AC14608009AEF32 /* AppDelegate.swift in Sources */,
