@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import CoreData
+import CoreLocation
 
 
 class TripViewController: UITableViewController,NSFetchedResultsControllerDelegate {
@@ -70,7 +71,7 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
     }
     
     
-    //MARK:TableViewDataSource
+    //MARK:TableViewDataSource Methods
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -93,6 +94,16 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
         atIndexPath indexPath: NSIndexPath) {
             let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as CheckIn
             cell.textLabel?.text = item.note
+    }
+    
+    //MARK:TableViewDelegate Methods
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("showMapView", sender: self);
+
+        
     }
     
     
@@ -140,14 +151,29 @@ class TripViewController: UITableViewController,NSFetchedResultsControllerDelega
         self.tableView.endUpdates()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "showMapView") {
+            let controller = segue.destinationViewController as MapViewController
+            
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                
+                let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as CheckIn
+                
+                controller.focusedLocation = CLLocation(latitude: item.latitude.doubleValue, longitude: item.longitude.doubleValue)
+                
+            }
+        
+        }
+
     }
-    */
+    
 
 }
